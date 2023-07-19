@@ -1,0 +1,392 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="Content-Security-Policy" content="default-src 'self' data: https://ssl.gstatic.com 'unsafe-eval'; style-src 'self' 'unsafe-inline'; media-src *; img-src 'self' data: content:;">
+        <meta name="format-detection" content="telephone=no">
+        <meta name="msapplication-tap-highlight" content="no">
+        <meta name="viewport" id="viewport-meta" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
+        <meta name="color-scheme" content="light dark">
+        <link rel="stylesheet" href="css/index.css">
+        <title>PIXI PLATFORM</title>
+    </head>
+    <body>
+        <div class="splashScreen">
+            <img src="./res/logo.png" alt="">
+        </div>
+
+        <div class="frontScreen">
+            <button class="pauseBtn">
+                    <img src="./Assets/Icons/iconPause.png" alt="">
+            </button>
+            <div class="coinContainer">
+                <div class="diamond">
+                    <div class="img-container">
+                        <img src="./Assets/Icons/diamond.png" alt="">
+                    </div>
+                    <span>0</span>
+                </div>
+    
+                <div class="gold">
+                    <div class="img-container">
+                        <img src="./Assets/Icons/goldCoin.png" alt="">
+                    </div>
+                    <span>0</span>
+                </div>
+    
+            </div>
+    
+            <div class="powerContainer">
+                <div class="img-container">
+                    <img src="./Assets/Icons/bubble.png" alt="">
+                </div>
+                <div class="timeContainer">
+                    <div class="powerTime activeTime"></div>
+                </div>
+            </div>
+            <div class="buttons">
+                <button class="throw">
+                    <img src="./Assets/Icons/throwBtn.png" alt="">
+                </button>
+                <button class="jump">
+                    <img src="./Assets/Icons/jumpBtn.png" alt="">
+                </button>
+                <div class="gameActiveBtnContainer">
+                    <h2 class="gameActiveBtn">START GAME</h2>
+                </div>
+            </div>
+               
+            <div class="wrapperPaused">
+                <div class="pausedContainer">
+                    <button><div class="img-container"><img src="./Assets/Icons/iconHome.png" alt=""></div>Home</button>
+                    <button><div class="img-container"><img src="./Assets/Icons/iconSoundOn.png" alt=""></div>Sound</button>
+                    <button><div class="img-container"><img src="./Assets/Icons/pausedScreenPlayIcon.png" alt=""></div>Resume</button>
+                </div>
+            </div>
+    
+            <div class="timer">
+                <h1></h1>
+            </div>
+        </div> 
+    
+       <div class="wrapperGameOver">
+        <div class="gameOverScreen">
+            <div class="leftContainer">
+                <div class="title">
+                    <h3>GAME OVER</h3>
+                </div>
+                <div class="scoresAndCoins">
+                  <div class="left">
+                    <div class="score">
+                        <h3 class="gameOverScore">0</h3>
+                        <p>Score</p>
+                    </div>
+                    <div class="bestScore">
+                            <div class="img-container">
+                                <img src="./Assets/Icons/iconBestScore.png" alt="">
+                            </div>
+                            <span class="gameOverBestScore"></span>
+                    </div>
+                  </div>
+    
+                   <div class="right">
+                        <div class="gold">
+                            <div class="img-container">
+                                <img src="./Assets/Icons/goldCoin.png" alt="">
+                            </div>
+                            <span class="gameOverGold"></span>
+                        </div>
+                        <div class="diamond">
+                            <div class="img-container">
+                                <img src="./Assets/Icons/diamond.png" alt="">
+                            </div>
+                            <span class="gameOverDiamond"></span>
+                        </div>
+                   </div>
+                </div>
+            </div>
+            <div class="buttons">
+                <button class="home">
+                    <div class="img-container">
+                        <img src="./Assets/Icons/iconHome.png" alt="">
+                    </div>
+                    <span>Home</span>
+                </button>
+                <button class="ad">
+                    <div class="hearts">
+                        <p>+</p>
+                        <div class="img-containers">
+                            <div class="img-container">
+                                <img src="./Assets/Icons/heart.png" alt="">
+                            </div>
+                            <div class="img-container">
+                                <img src="./Assets/Icons/heart.png" alt="">
+                            </div>
+                            <div class="img-container">
+                                <img src="./Assets/Icons/heart.png" alt="">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="img-container">
+                        <img src="./Assets/Icons/iconAds.png" alt="">
+                    </div>
+                    <span></span>
+                    <div class="img-container2 noEntry">
+                        <img src="./Assets/Icons/noEntry.png" alt="">
+                    </div>
+                </button>
+                <button class="tryAgain"><div class="img-container">
+                    <img src="./Assets/Icons/iconRestart.png" alt="">
+                </div>
+                <span>Try Again</span>
+                </button>
+            </div>
+            <div class="bg-image">
+                <img src="./Assets/Icons/homeScreenBG.png" alt="">
+            </div>
+        </div>
+       </div>
+        
+    
+        <div class="homeScreen">
+            <div class="bg-image">
+                <img src="./Assets/Icons/homeScreenBG.png" alt="">
+            </div>
+            <div class="upContainer">
+                <div class="first">
+                    <button class="circle-btn" id="leave">
+                        <img src="./Assets/Icons/iconSignOut.png" alt="">
+                    </button>
+                    <div class="coins">
+                        <div>
+                            <div class="img-container">
+                                <img src="./Assets/Icons/goldCoin.png" alt="">
+                            </div>
+                            <span class="homeScreenGoldCoin"></span>
+                        </div>
+                        <div>
+                            <div class="img-container">
+                                <img src="./Assets/Icons/diamond.png" alt="">
+                            </div>
+                            <span class="homeScreenDiamondCoin"></span>
+                        </div>
+                    </div>
+                </div>
+                <div class="second">
+                    <button class="circle-btn about">
+                        <img src="./Assets/Icons/iconInfo.png" alt="">
+                    </button>
+                    <button class="circle-btn game" id="psBtn">
+                        <img src="./Assets/Icons/test1010.png" style="transform: scale(0.8);" alt="">
+                    </button>
+                </div>
+            </div>
+            <div class="leftContainer">
+                <div class="platforms">
+                    <img src="./Assets/Icons/iconPlatform.png" alt="">
+                    <span>Platforms</span>
+                </div>
+                <div class="characters">
+                        <img src="./Assets/Icons/iconNinja.png" alt="">
+                    <span>Characters</span>
+                </div>
+            </div>
+            <div class="rightContainer">
+                <div class="scores">
+                    <div class="homeScreenScore">
+                        <h3>0</h3>
+                        <div>Score</div>
+                    </div>
+                    <div class="bestScore">
+                        <div class="img-container">
+                            <img src="./Assets/Icons/iconBestScore.png" alt="">
+                        </div>
+                        <p class="homeScreenBestScore"></p>
+                    </div>
+                </div>
+                <div class="startContainer">
+                    <div class="gameTitle">
+                        <div class="pixiTitle">
+                            <h2>
+                                PIXI
+                                <div class="imgContainer">
+                                    <img src="./Assets/Characters/NinjaMan/Images/kunai.png" alt="">
+                                </div>
+                            </h2>
+                        </div>
+    
+                        <div class="platformTitle">
+                            <h2>PLATFORM</h2>
+                        </div>
+                    </div>
+                    <button class="gameStartBtn">
+                        <img src="./Assets/Icons/pausedScreenPlayIcon.png" alt="">
+                    </button>
+                </div>
+            </div>
+    
+            <div class="platformElements">
+                <div class="bg-image">
+                    <img src="./Assets/Icons/homeScreenBG.png" alt="">
+                </div>
+                <div class="buttons">
+                    <button class="close" id="close">
+                        <img src="./Assets/Icons/iconClose.png" alt="">
+                    </button>
+    
+                    <div class="coin"><img src="./Assets/Icons/diamond.png" alt=""> <span class="platformElDiamond"></span></div>
+    
+                    <div class="platformAd ad">
+                        <span>+15<img style="transform: translateY(-3px); width: 20px; height: 20px;" src="./Assets/Icons/diamond.png"/></span>
+                        <button>
+                            <img style="width: 60px; height: 60px;" src="./Assets/Icons/iconAds.png" alt="">
+                        </button>
+                        <div class="img-container3">
+                            <img src="./Assets/Icons/noEntry.png" alt="">
+                        </div>
+                    </div>
+                </div>
+               <div class="platformEl"></div>
+            </div>
+            <div class="characterElements">
+                <div class="bg-image">
+                    <img src="./Assets/Icons/homeScreenBG.png" alt="">
+                </div>
+                <div class="buttons">
+                    <button class="close" id="close">
+                        <img src="./Assets/Icons/iconClose.png" alt="">
+                    </button>
+    
+                    <div class="coin"><img src="./Assets/Icons/goldCoin.png" alt=""> <span class="characterElGoldCoin"></span></div>
+    
+                    <div class="playerAd ad">
+                        <span>+100<img style="transform: translateY(-3px); width: 20px; height: 20px;" src="./Assets/Icons/goldCoin.png"/></span>
+                        <button>
+                            <img style="width: 60px; height: 60px;" src="./Assets/Icons/iconAds.png" alt="">
+                        </button>
+                        <div class="img-container3">
+                            <img src="./Assets/Icons/noEntry.png" alt="">
+                        </div>
+                    </div>
+                </div>
+               <div class="playerElements"></div>
+            </div>
+            <div class="aboutContainer">
+                <div class="bg-image">
+                    <img src="./Assets/Icons/homeScreenBG.png" alt="">
+                </div>
+                <div>
+                    <button class="close" id="close">
+                        <img src="./Assets/Icons/iconClose.png" alt="">
+                    </button>
+                </div>
+    
+                <div class="aboutWrapper">
+                    <div class="container1">
+                    <p>
+                        This game is created with html5 (canvas), so game performance may vary depending on your device's hardware capabilities. This game uses advertising as a revenue model. If you are uncomfortable, you can turn off your internet connection. In the right area, a link is left for the paid and free game assets and sounds used in this game. If you like the game, you can give a star from the link below and leave a comment about the game. Thanks...                    </p>
+
+                    <div class="connectPS">
+                        <div class="stars">
+                            <div class="imgContainer">
+                                <img src="./Assets/Icons/star.png" alt="">
+                            </div>
+                            <div class="imgContainer">
+                                <img src="./Assets/Icons/star.png" alt="">
+                            </div>
+                            <div class="imgContainer">
+                                <img src="./Assets/Icons/star.png" alt="">
+                            </div>
+                            <div class="imgContainer">
+                                <img src="./Assets/Icons/star.png" alt="">
+                            </div>
+                            <div class="imgContainer">
+                                <img src="./Assets/Icons/star.png" alt="">
+                            </div>
+                        </div>
+                        <button id="goToPS">Go to play store</button>
+                    </div>
+                    </div>
+                    <div class="container2">
+                        <div class="li">
+                            <h3>Open Game Art:</h3>
+                            <a href="https://opengameart.org/">https://opengameart.org/</a>
+                        </div>
+                        <div class="li">
+                            <h3>Game Art 2d:</h3>
+                            <a href="https://www.gameart2d.com/">https://www.gameart2d.com/</a>
+                        </div>
+                        <div class="li">
+                            <h3>Game Developer Studio:</h3>
+                            <a href="https://www.gamedeveloperstudio.com/">https://www.gamedeveloperstudio.com/</a>
+                        </div>
+
+                        <div class="li">
+                            <h3>Bevouliin:</h3>
+                            <a href="https://bevouliin.com/">https://bevouliin.com/</a>
+                        </div>
+                        
+                        <div class="li">
+                            <h3>Pixabay:</h3>
+                            <a href="https://pixabay.com/">https://pixabay.com/</a>
+                        </div>
+
+                        <div class="li">
+                            <h3>Chosic:</h3>
+                            <a href="https://www.chosic.com/free-music/all/?keyword=kevin%20macleod">https://www.chosic.com/free-music/all/?keyword=kevin%20macleod</a>
+                        </div>
+
+                        <div class="li">
+                            <h3>Vecteezy:</h3>
+                            <a href="https://www.vecteezy.com/">https://www.vecteezy.com/</a>
+                        </div>
+                        <div class="li">
+                            <h3>Freepik:</h3>
+                            <a href="https://www.freepik.com/">https://www.freepik.com/</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+    
+            <div class="wrapperEndGameContainer">
+                <div class="endGameContainer">
+                    <div class="bg-image">
+                        <img src="./Assets/Icons/homeScreenBG2.png" alt="">
+                    </div>
+                    <h4>Are you sure you want out?</h4>
+                    <div class="btns">
+                        <button><img src="./Assets/Icons/iconTick.png" alt=""></button>
+                        <button><img src="./Assets/Icons/iconClose.png" alt=""></button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    
+       <div class="loadingContainer">
+            <div class="loading">
+            </div>
+       </div>
+    
+        <div class="bg-image-container">
+            <img src="./Assets/Platforms/Desert/BG.png">
+        </div>
+    
+        <canvas id="canvas1"></canvas>
+
+    <script src="cordova.js"></script>
+    <script src="js/index.js"></script>
+    <script src="js/device.js"></script>
+    <script src="js/howler.min.js"></script>
+    <script src="js/pixi.js"></script>
+    <script src="js/Images.js"></script>
+    <script src="js/Sounds.js"></script>
+    <script src="js/SetupMethods.js"></script>
+    <script src="js/Setup.js"></script>
+    <script src="js/Classes.js"></script>
+    <script src="js/Utils.js"></script>
+    <script src="js/Game.js"></script>
+    <script src="js/load.js"></script>
+    <script src="js/Events.js"></script> 
+    <script src="js/ads.js"></script>
+    </body>
+</html>
